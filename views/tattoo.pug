@@ -1,4 +1,27 @@
 extends layout
 block content
   h1= title
-
+  div(class="container-fluid")
+    div(class="row")
+      -
+        let stuff = [
+	  {
+	    "tatNum":2,
+	    "tatColor":"Red",
+	    "tatLocation":"Arm"
+	  },
+	  {
+	    "tatNum":1,
+	    "tatColor":"Black",
+	    "tatLocation":"Back"
+	  },
+	  {
+	    "tatNum":3,
+	    "tatColor":"White",
+	    "tatLocation":"Face"
+	  },
+	]
+      each tattoo, index in stuff
+        div(class="col-sm-2") #{tattoo.tatNum}
+	div(class="col-sm-2") #{tattoo.tatColor}
+	div(class="col-2m-2") #{tattoo.tatLocation}
